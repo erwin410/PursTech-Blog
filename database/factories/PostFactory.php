@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,9 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->sentence(rand(5, 10), true),
+            'description' => $this->faker->sentences(5, true),
+            'image' => 'https://via.placeholder.com/1000'
         ];
     }
 }
