@@ -9,7 +9,8 @@ class DashboardController extends Controller
     public function index ()
     {
         $posts = auth()->user()->posts;
+        
 
-        return view('dashboard', compact('posts'));
+        return view('dashboard', compact('posts',)); 
     }
 }

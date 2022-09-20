@@ -19,8 +19,8 @@
 
                 <article class="flex flex-col shadow my-4">
                     <!-- Article Image -->
-                    <a href="#" class="hover:opacity-75">
-                        <img src="https://source.unsplash.com/collection/1346951/1000x500?sig=1">
+                    <a href="{{ route('posts.show', $post) }}" class="hover:opacity-75">
+                        <img src="{{ asset('/storage/' . $post->image)}}">
                     </a>
                     
                     <div class="bg-white flex flex-col justify-start p-6">
@@ -30,7 +30,7 @@
                         Publier le {{ $post->created_at->format('d M Y') }}
                         </p>
                         <p class="pb-6">{{ Str::limit($post->description, 125) }}</p>
-                        <a href="#" class="uppercase text-gray-800 hover:text-black">Voir plus <i class="fas fa-arrow-right"></i></a>
+                        <a href="{{ route('posts.show', $post) }}" class="uppercase text-gray-800 hover:text-black">Voir plus <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 

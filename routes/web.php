@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function () {
          ->except('index');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])
-        ->name('dashboard');
+         ->name('dashboard');
 });
 
 require __DIR__.'/auth.php';
