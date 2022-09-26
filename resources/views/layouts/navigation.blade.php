@@ -119,9 +119,7 @@
                 {{ __('Accueil') }}
             </x-responsive-nav-link>
             @auth
-            {{-- <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-white">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link> --}}
+            
 
             <x-dropdown-link :href="route('dashboard')" class="text-white">
                 {{ __('Articles')}}
