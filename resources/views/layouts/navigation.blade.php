@@ -12,25 +12,22 @@
                     </x-nav-link>
 
                     @auth
-                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-white">
-                        {{ __('Dashboard') }}
-                    </x-nav-link> --}}
 
                     <x-dropdown width="40">
-                    <x-slot name="trigger">
+                        <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium text-white hover:text-blue-200 hover:border-gray-300 focus:outline-none focus:text-blue-200 focus:border-gray-300 transition duration-150 ease-in-out">
                             <div>Dashboard</div>
                         </button>
-                    </x-slot>
+                        </x-slot>
 
-                    <x-slot name="content">
+                        <x-slot name="content">
       
                             <x-dropdown-link :href="route('dashboard')">
                                 {{ __('Articles') }}
                             </x-dropdown-link>
 
-                    </x-slot>
-                </x-dropdown>
+                        </x-slot>
+                    </x-dropdown>
 
                     <x-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')" class="text-white">
                         {{ __('Créer un article') }}
@@ -122,9 +119,13 @@
                 {{ __('Accueil') }}
             </x-responsive-nav-link>
             @auth
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-white">
+            {{-- <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-white">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
+
+            <x-dropdown-link :href="route('dashboard')" class="text-white">
+                {{ __('Articles')}}
+            </x-dropdown-link>
 
             <x-responsive-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')" class="text-white">
                 {{ __('Créer un article') }}
