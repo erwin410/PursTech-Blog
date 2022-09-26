@@ -11,13 +11,13 @@
           </tr>
         </thead>
         <tbody class="table-group-divider">
+
             @foreach ($posts as $post)
-                
-            
+
           <tr>
-            <td>{{ Str::limit($post->title, 10) }}</td>
-            <td>{{ Str::limit($post->description, 20) }}</td>
-            <td>{{ $post->category->name }}</td>
+            <td><a href="{{ route('posts.show', $post) }}">{{ Str::limit($post->title, 10) }}</a></td>
+            <td><a href="{{ route('posts.show', $post) }}">{{ Str::limit($post->description, 20) }}</a></td>
+            <td><a href="{{ route('posts.show', $post) }}">{{ $post->category->name }}</a></td>
             <td>
                 <a href="{{ route('posts.edit', $post) }}" class="link-dark" ><i class="bi bi-pencil fs-5 me-3"></i></a>
                 <a href="#" class="link-dark" class="modalClick" data-bs-toggle="modal" data-bs-target="#deleteEmployeeModal"><i class="bi bi-trash3 fs-5"></i></a>

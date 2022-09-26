@@ -22,7 +22,7 @@
                         <p class="text-sm pb-8">
                          Publier le {{ $post->created_at->format('d M Y') }}
                         </p>
-                        <p class="pb-3">{{ $post->description }}</p>
+                        <p class="whitespace-pre-line pb-3">{{ $post->description }}</p>
                 </article>
     
              
@@ -31,5 +31,7 @@
 
             @include('inc.aside')
     </div>
+
+    @include('inc.footer')
     
 </x-app-layout>
