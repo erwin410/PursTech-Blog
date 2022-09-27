@@ -5,7 +5,7 @@
     <div class="w-full bg-white shadow flex flex-col my-4 p-6">
         <p class="text-xl font-semibold pb-5">A Propos de nous</p>
         <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
-        <a href="#" class="w-full bg-[#382A43] text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+        <a href="#" class="w-full bg-[#04BFAD] text-white font-bold text-sm uppercase rounded hover:bg-[#00BBC9] flex items-center justify-center px-2 py-3 mt-4">
             En savoir plus
         </a>
     </div>
@@ -23,7 +23,7 @@
             <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8">
             <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9">
         </div>
-        <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
+        <a href="#" class="w-full bg-[#04BFAD] text-white font-bold text-sm uppercase rounded hover:bg-[#00BBC9] flex items-center justify-center px-2 py-3 mt-6">
             <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb
         </a>
     </div>
