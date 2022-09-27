@@ -26,6 +26,10 @@
                                 {{ __('Articles') }}
                             </x-dropdown-link>
 
+                            <x-dropdown-link :href="route('category')">
+                                {{__('Catégories')}}
+                            </x-dropdown-link>
+
                         </x-slot>
                     </x-dropdown>
 
