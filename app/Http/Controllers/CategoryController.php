@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class CategoryController extends Controller
 {
@@ -15,6 +16,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
+
+        
 
         return view('category', compact('categories'));
     }
@@ -37,7 +40,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create([
+            'name' => $request->name
+        ]);
+
+        return redirect()->route('category')->with('succes', 'Votre catégories a bien été crée. ');
     }
 
     /**
@@ -54,34 +61,53 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        if (Gate::denies('update-category', $category)) {
+            abort(403);
+        }
+        
+        return view('catego.edit', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        
+
+        $arrayUpdate = [
+            'name' => $request->name
+        ];
+
+        $category->update($arrayUpdate);
+
+        return redirect()->route('category')->with('succes', 'La catégorie à bien été modifier');
+        
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        if (Gate::denies('destroy-category', $category)) {
+            abort(403);
+        } 
+
+        $category->delete();
+
+        return redirect()->route('category')->with('success', 'La catégories à bien été supprimer');
     }
 }

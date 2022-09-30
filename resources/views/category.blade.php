@@ -6,6 +6,10 @@
     </x-slot>
 
     <div class="w-full mb-20 py-12 border-t border-b bg-black"></div>
-
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        @if(session('success'))
+            {{ session('success')}}
+        @endif
+    </div>
     @include('inc.crudcategory')
 </x-app-layout>

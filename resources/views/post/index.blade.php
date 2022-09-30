@@ -5,7 +5,6 @@
         </h2>
     </x-slot>
 
-     
     <!-- Category Nav -->
     @include('inc.category')
 
@@ -31,7 +30,9 @@
                         Publier le {{ $post->created_at->format('d M Y') }}
                         </p>
                         <p class="pb-6">{{ Str::limit($post->description, 125) }}</p>
-                        <button class="p-2 pl-5 pr-5 w-40 bg-[#04BFAD] hover:bg-[#00BBC9] text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"><a href="{{ route('posts.show', $post) }}" class="hover:text-black"> Voir plus  <i class="fas fa-arrow-right"></i></a></button>
+                        <button class="p-2 pl-5 pr-5 w-40 bg-[#04BFAD] hover:bg-[#00BBC9] text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
+                            <a href="{{ route('posts.show', $post) }}" class="hover:text-black"> Voir plus  <i class="fas fa-arrow-right"></i></a>
+                        </button>
                     </div>
 
                 </article>
