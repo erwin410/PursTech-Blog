@@ -2,7 +2,12 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex justify-start">
+                <div class="flex items-center">
+                    <a href="{{ route('dashboard') }}">
+                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                    </a>
+                </div>
               
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -10,6 +15,10 @@
                     <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')" class="text-white">
                         {{ __('Accueil') }}
                     </x-nav-link>
+
+                    {{-- <x-nav-link :href="route('post.about')" :active="request()->routeIs('post.about')" class="text-white">
+                        {{ __('A Propos') }}
+                    </x-nav-link> --}}
 
                     @auth
 

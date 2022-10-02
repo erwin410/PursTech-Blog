@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 
+Route::get('/about', function () {
+     return view('about');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('posts', PostController::class)
