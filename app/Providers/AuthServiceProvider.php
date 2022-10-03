@@ -38,12 +38,5 @@ class AuthServiceProvider extends ServiceProvider
             return $user->id == $post->user_id;
         });
 
-        Gate::define('update-category', function (User $user, Category $category) {
-            return $user->id == $category->user_id;
-        });
-
-        Gate::define('destroy-category', function (User $user, Category $category) {
-            return $user->id == $category->user_id;
-        });
     }
 }

@@ -26,7 +26,7 @@ Route::get('/about', function () {
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/show', [PostController::class, 'show'])->name('posts.show');
+    
 });
 
 
