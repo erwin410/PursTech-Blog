@@ -16,12 +16,10 @@
                         {{ __('Accueil') }}
                     </x-nav-link>
 
-                    {{-- <x-nav-link :href="route('post.about')" :active="request()->routeIs('post.about')" class="text-white">
-                        {{ __('A Propos') }}
-                    </x-nav-link> --}}
-
+                    
                     @auth
-
+                    @if(Auth::User()->hasRole('admin'))
+                
                     <x-dropdown width="40">
                         <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium text-white hover:text-blue-200 hover:border-gray-300 focus:outline-none focus:text-blue-200 focus:border-gray-300 transition duration-150 ease-in-out">
@@ -41,12 +39,16 @@
 
                         </x-slot>
                     </x-dropdown>
-
+                    
                     <x-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')" class="text-white">
                         {{ __('Créer un article') }}
                     </x-nav-link>
-
+                    
+                    @endif
                     @endauth
+                    
+                   
+                   
 
                 </div>
             </div>

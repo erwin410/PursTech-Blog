@@ -19,15 +19,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 
+
 Route::get('/about', function () {
      return view('about');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::resource('posts', PostController::class)
-         ->except('index');
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])
+Route::middleware(['auth'])->group(function () {
+    Route::get('/show', [PostController::class, 'show'])->name('posts.show');
+});
+
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+     Route::resource('posts', PostController::class)
+         ->except(['index']);
+    
+
+     Route::get('/dashboard', [DashboardController::class, 'index'])
          ->name('dashboard');
 
      Route::resource('categories', CategoryController::class);
