@@ -4,9 +4,9 @@
         <div class="flex justify-between h-16">
             <div class="flex justify-start">
                 <div class="flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
-                    </a>
+                    
                 </div>
               
                 <!-- Navigation Links -->

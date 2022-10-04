@@ -15,20 +15,22 @@
     <div class="w-full bg-white shadow flex flex-col my-4 p-6">
         <p class="text-xl text-center font-semibold pb-3">Contact</p>
 
-            <form class="p-6 flex flex-col justify-center">
+            <form action="#" method="POST" class="p-6 flex flex-col justify-center">
+                @csrf
+
                 <div class="flex flex-col">
-                    <label for="name" class="hidden">Nom Prénom</label>
-                    <input type="name" name="name" id="name" placeholder="Nom Prénom" class="w-500 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none">
+                    <label for="name" class="hidden">Votre Nom: </label>
+                    <input type="name" name="name" class="w-500 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none" placeholder="Entrez votre nom...">
                 </div>
 
                 <div class="flex flex-col mt-2">
-                    <label for="email" class="hidden">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none">
+                    <label for="email" class="hidden">Adresse Mail: </label>
+                    <input type="email" name="email" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none" placeholder="Entrez votre adresse mail...">
                 </div>
 
                 <div class="flex flex-col mt-2">
-                    <label for="" class="hidden">Votre Besoin</label>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Votre demande" class="rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"></textarea>
+                    <label for="message" class="hidden">Votre Demande: </label>
+                    <textarea name="message" cols="30" rows="10" class="rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none" placeholder="Entrez votre demande..."></textarea>
                 </div>
 
                 <button type="submit" class="w-full bg-[#04BFAD] hover:bg-[#00BBC9] text-white font-bold text-sm py-3 px-2 rounded-lg mt-6 transition ease-in-out duration-300">

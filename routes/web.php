@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,7 @@ Route::get('/about', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/show/{id}', [PostController::class, 'show'])->name('posts.show'); 
+    
 });
 
 
