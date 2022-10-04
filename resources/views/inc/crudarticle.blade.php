@@ -19,14 +19,14 @@
             <td><a href="{{ route('posts.show', $post) }}">{{ Str::limit($post->description, 20) }}</a></td>
             <td><a href="{{ route('posts.show', $post) }}">{{ $post->category->name }}</a></td>
             <td>
+              <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                 <a href="{{ route('posts.edit', $post) }}" class="link-dark" ><i class="bi bi-pencil fs-5 me-3"></i></a>
-                <a href="#" class="link-dark" onclick="event.preventDefault
-                document.getElementById('destroy-post-form').submit();"><i class="bi bi-trash3 fs-5"></i>
-                <form action="{{ route('posts.destroy', $post) }}" method="POST" id="destroy-post-form">
-                  @csrf
-                  @method('delete')
+
+                @csrf
+                @method('delete')
+
+                <button type="submit" class="link-dark"><i class="bi bi-trash3 fs-5"></i></button>
               </form>
-                </a>
             </td>
           </tr>
         </tbody>

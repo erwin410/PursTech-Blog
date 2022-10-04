@@ -119,12 +119,9 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Post $post  )
     {
-        if (Gate::denies('destroy-post', $post)) {
-            abort(403);
-        } 
-
+        
         $post->delete();
 
         return redirect()->route('dashboard')->with('success', 'L\'article à bien été supprimer');
