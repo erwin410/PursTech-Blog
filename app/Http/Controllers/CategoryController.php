@@ -66,11 +66,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        if (Gate::denies('update-category', $category)) {
-            abort(403);
-        }
         
-        return view('catego.edit', compact('category'));
+        
+        return view('category.edit', compact('category'));
     }
 
     /**
@@ -102,10 +100,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        if (Gate::denies('destroy-category', $category)) {
-            abort(403);
-        } 
-
+        
         $category->delete();
 
         return redirect()->route('category')->with('success', 'La catégories à bien été supprimer');

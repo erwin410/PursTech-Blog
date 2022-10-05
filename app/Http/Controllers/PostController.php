@@ -100,14 +100,14 @@ class PostController extends Controller
             'description' => $request->description
         ];
 
-        if ($request->image = null) {
+        if ($request->image != null) {
             $imageName = $request->image->store('posts');
 
             $arrayUpdate = array_merge($arrayUpdate, [
                 'image' => $imageName
             ]);
         }
-
+        
         $post->update($arrayUpdate);
 
         return redirect()->route('dashboard')->with('success', 'L\'article à bien été modifier');

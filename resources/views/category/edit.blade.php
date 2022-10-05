@@ -16,7 +16,7 @@
     </div>
                 <div class="flex items-center justify-center max-w-2xl mx-auto p-16 mt-20 mb-20 bg-white shadow-2xl rounded-xl">
                     
-                    <form action="{{ route('categories.update', $category) }}" method="POST" enctype="multipart/form-data" class="min-w-full">
+                    <form action="{{ route('categories.update', $category->id) }}" method="POST" enctype="multipart/form-data" class="min-w-full">
                         @method('put')
                         @csrf
 

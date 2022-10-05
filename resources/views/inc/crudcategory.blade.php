@@ -20,14 +20,16 @@
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->created_at }}</td>
                 <td>
-                    <a href="#" class="link-dark"><i class="bi bi-pencil fs-5 me-3"></i></a>
-                    <a href="#" class="link-dark" onclick="event.preventDefault
-                    document.getElementById('destroy-post-form').submit();"><i class="bi bi-trash3 fs-5"></i>
-                    <form action="{{ route('categories.destroy', $category->id) }}" method="POST" id="destroy-post-form">
-                        @csrf
-                        @method('delete')
-                    </form>
-                    </a>
+
+                <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
+                    <a href="{{ route('categories.edit', $category->id) }}" class="link-dark"><i class="bi bi-pencil fs-5 me-3"></i></a>
+
+                    @csrf
+                    @method('delete')
+
+                    <button type="submit" class="link-dark"><i class="bi bi-trash3 fs-5"></i></button>
+                </form>
+
                 </td>
             </tr>
         </tbody>

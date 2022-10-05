@@ -1,6 +1,7 @@
 
 <div class="container">
     <h2 class="mb-4 fs-3">Liste des articles</h2>
+ 
     <table class="table table-hover text-center">
         <thead class="table-dark">
           <tr>
@@ -32,12 +33,7 @@
         </tbody>
         @endforeach
       </table>
-      
   
-      
-      
-      {{-- delete modal --}}
-      {{-- @include('modalarticle.delete') --}}
     
     <div class="flex-end">
         {{ $posts->links('pagination::bootstrap-4') }}
