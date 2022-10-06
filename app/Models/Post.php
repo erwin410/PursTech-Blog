@@ -40,4 +40,9 @@ class Post extends Model
     {
         return Str::title($attribute);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'post_id', 'id');
+    }
 }

@@ -82,4 +82,11 @@ class User extends Authenticatable
       }
       return false;
     }
+
+    public function commentaires()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
+
+    
 }
