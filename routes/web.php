@@ -23,6 +23,7 @@ Route::get('/', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('/show/{id}', [PostController::class, 'show'])->name('posts.show'); 
 
+Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
 
 Route::get('/about', function () {
      return view('about');
@@ -33,7 +34,6 @@ Route::middleware(['auth'])->group(function () {
     
     Route::controller(CommentController::class)->group(function () {
             Route::post('/comment/store', 'store')->name('comment.store');
-            Route::delete('/comment/{id}/destroy', 'destroy')->name('comment.destroy');
     });
 });
 

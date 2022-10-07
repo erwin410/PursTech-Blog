@@ -14,8 +14,13 @@
 
     <div class="w-full bg-white shadow flex flex-col my-4 p-6">
         <p class="text-xl text-center font-semibold pb-3">Contact</p>
+       
+            @if(session('success'))
+                {{ session('success')}}
+            @endif
+        
 
-            <form action="#" method="POST" class="p-6 flex flex-col justify-center">
+            <form action="{{ route('send.email') }}" method="POST" class="p-6 flex flex-col justify-center">
                 @csrf
 
                 <div class="flex flex-col">
