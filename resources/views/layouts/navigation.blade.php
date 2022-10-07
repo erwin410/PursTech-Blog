@@ -16,6 +16,10 @@
                         {{ __('Accueil') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('about')" :active="request()->routeIs('about')" class="text-white">
+                        {{ __('A propos') }}
+                    </x-nav-link>
+
                     
                     @auth
                     @if(Auth::User()->hasRole('admin'))

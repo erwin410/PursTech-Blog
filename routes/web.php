@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
@@ -25,9 +26,7 @@ Route::get('/show/{id}', [PostController::class, 'show'])->name('posts.show');
 
 Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
 
-Route::get('/about', function () {
-     return view('about');
-});
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 
 Route::middleware(['auth'])->group(function () {
