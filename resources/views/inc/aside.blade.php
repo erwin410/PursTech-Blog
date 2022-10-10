@@ -3,11 +3,11 @@
   
 
     <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-        <p class="text-xl font-semibold pb-5">A Propos</p>
-        <p class="pb-2">Passionée par le numérique et l'informatique, j'ai toujours adoré l'idée de pouvoir me réinventer chaqu jour
+        <p class="text-xl font-semibold pb-5">A Propos de moi</p>
+        <p class="pb-2">Passionée par le numérique et l'informatique, j'ai toujours adoré l'idée de pouvoir me réinventer chaque jour
             au gré de mes envies et de mes inspirations.
         </p>
-        <a href="#" class="w-full bg-[#04BFAD] text-white font-bold text-sm uppercase rounded hover:bg-[#00BBC9] flex items-center justify-center px-2 py-3 mt-4">
+        <a href="{{ route('about')}}" class="w-full bg-[#04BFAD] text-white font-bold text-sm uppercase rounded hover:bg-[#00BBC9] flex items-center justify-center px-2 py-3 mt-4">
             En savoir plus
         </a>
     </div>
